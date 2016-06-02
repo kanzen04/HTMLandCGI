@@ -1,0 +1,92 @@
+Dawa Lama (109463980)
+CSE 337 
+Assignment 4
+
+
+1.
+A. 
+	command: echo $0. 
+	shell being used is bash. By default it is tcsh but since the assignment asks the login shell to be bash, it is bash.
+	
+	command: cd; pwd
+	path: /home/cou/cse310/students/dlama
+	
+	command: pwd
+	current working directory: dlama
+
+B.
+	To read the man page: man ls
+	To find the last modification time of a file, we can use -t in the ls command.
+	command: ls -lt /home/cou/cse310/students/dlama/hey.txt
+
+C. 
+	command: date -r hey.txt
+	This will display the last modification time of the file hey.txt
+
+D. 
+	command: cal jan 2017
+	Jan 1 2017 is on Sunday
+	command: cal may 2017
+	Mother's day is on 14th
+
+E. 
+	command: ssh dlama@allv25.all.cs.stonybrook.edu -p 130
+
+
+
+2.
+A.
+	command: cd (go to home directory)
+	command: mkdir d1 d2 d3
+	command: ls -l (to display list of file and directories)
+	drwxr-xr-x 2 dlama systemd-network 4096 Apr 26 23:56 d1
+	drwxr-xr-x 2 dlama systemd-network 4096 Apr 26 23:56 d2
+	drwxr-xr-x 2 dlama systemd-network 4096 Apr 26 23:56 d3
+
+	Users have read, write and execute permissions
+	Group and others have read and execute permissions
+	
+	d in the beginning stands for directory, r is for read access, w is for write access and x is for execute access.
+
+B.
+	command: cd d1; touch file1 (go to first sub-directory and create a new file name called file1)
+	command: ls -l 
+	-rw-r--r-- 1 dlama systemd-network 0 Apr 27 00:12 file1
+	users have read and write access
+	group and others have read access
+
+	command: cat d1/file1
+
+C.
+	command: cp -r d1 d1copy
+	
+
+D.
+	command: chmod -r d1
+	(ls d1 will not work which is listing the content of d1 but cat d1/file1 will work which is displaying the content of files in d1
+
+
+E. 
+	command: rm -r d1 d2 d3 (deltes all the directories even if the directories are not empty)
+
+
+3. 
+A.
+	Finds a regular file (-type f) with any name but with extension '.gz' (*.gz), and has a file size more than 3k(kilobytes) in /usr/share/doc. The output is piped and wc -l will print the newline counts.
+
+B.
+	create a file boot.log, it is piped to grep which matches any line in the file that has 'OK' in it. The output of grep is inputed into tee which then writes to standard output and files log1 in home directory and log1 in home direcotry's 337 folder. head -15 shows the first 15 lines of the file log1
+
+C.
+	wc -c counts the the bytes count of all the files in /var/log. only standard erors (2>) is passed to /dev/null. The byte counts is then sorted in ascending order (sort -n) and redirects STDOUT to the file loglog.txt in home directory.
+
+D.
+	command: ls -l /usr/share/doc|wc -l (This shows that there are 1899 entries in the doc directory)
+	command: ls -l /usr/share/doc | grep ^d | wc -l (This shows that there are 1845 directories in the doc directory)
+
+
+ 
+
+
+
+

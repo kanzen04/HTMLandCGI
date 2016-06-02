@@ -1,0 +1,23 @@
+#QUESTION 4
+
+#!/bin/bash
+
+#a
+echo "\nToday is `date`"
+
+#b
+echo "Content of my home directory sorted"
+echo $(for i in $(seq 1 62); do printf "-"; done)
+
+#c
+cd
+ls -ltr
+
+#d
+entries=$(ls -l | wc -l)
+directories=$(ls -d */ | wc -l)
+files=$(find . -type f -maxdepth 1 | wc -l)
+echo "\nThere are total $entries entries, with $directories directories and $files files."
+
+#e
+echo "Done\n"
